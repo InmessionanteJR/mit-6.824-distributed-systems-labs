@@ -10,13 +10,18 @@ package main
 // Please do not change this file.
 //
 
-import "6.824/mr"
-import "plugin"
-import "os"
-import "fmt"
-import "log"
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
+	"plugin"
+
+	"6.824/mr"
+)
 
 func main() {
+	log.SetOutput(ioutil.Discard)
 	if len(os.Args) != 2 {
 		fmt.Fprintf(os.Stderr, "Usage: mrworker xxx.so\n")
 		os.Exit(1)
